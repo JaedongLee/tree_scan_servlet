@@ -5,6 +5,10 @@
          version="3.1">
     <servlet>
         <servlet-name>http</servlet-name>
-        <servlet-class>com.scan.http</servlet-class>
+        <servlet-class>com.scan.Http</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>http</servlet-name>
+        <url-pattern>/http</url-pattern>
+    </servlet-mapping>
 </web-app>
