@@ -32,16 +32,25 @@ function requestSingleData() {
     var id = "id=" + Request["id"];
     $.ajax({
         type: "get",
-        url: "../http",
+        url: "../../http",
         data: id,
         datatype: "json",
         success: function (data) {
-            console.log(typeof (data));
-            console.log(data);
             var json = JSON.parse(data);
-            console.log(json.id);
-            console.log(json.name);
-            console.log(json.description);
+            addData(json)
         }
     })
+}
+
+function addData(data) {
+    document.getElementById('picture').setAttribute('src', '../images/' + data.picture_url + '.jpg')
+    document.getElementById('name').innerText = data.name
+    document.getElementById('name').innerText = data.name
+    document.getElementById('category').innerText = data.category
+    document.getElementById('provider_class').innerText = data.provider_class
+    document.getElementById('provider_name').innerText = data.provider_name
+    document.getElementById('appearance').innerText = data.appearance
+    document.getElementById('habit').innerText = data.habit
+    document.getElementById('distribution').innerText = data.distribution
+    document.getElementById('point').innerText = data.point
 }

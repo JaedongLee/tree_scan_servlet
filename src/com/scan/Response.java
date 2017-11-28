@@ -19,5 +19,4 @@ public class Response {
             response.getWriter().write(resStr);
         }
     }
-
 }

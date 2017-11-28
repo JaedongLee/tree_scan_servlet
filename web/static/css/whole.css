@@ -1,0 +1,37 @@
+body {
+    color: #666666;
+    font-size: 18px;
+    background-color:  #ffffff;
+    line-height: 30px;
+}
+
+/*details style begin*/
+.container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#img img {
+    width: 100%;
+}
+#name {
+}
+#category {
+    margin-top: 40px;
+}
+.short_list {
+    margin-left: 35vw;
+}
+#appearance {
+}
+.provider_name {
+    margin-bottom: 40px;
+}
+.interval {
+    height: 10px;
+    background-color: #f5f5f5;
+}
+/*details style end*/
+
+
+
+
