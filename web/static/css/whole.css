@@ -10,10 +10,11 @@ body {
     margin-top: 30px;
     margin-bottom: 20px;
 }
+#name {
+    margin-bottom: 30px;
+}
 #img img {
     width: 100%;
-}
-#name {
 }
 #category {
     margin-top: 40px;
@@ -21,10 +22,8 @@ body {
 .short_list {
     margin-left: 35vw;
 }
-#appearance {
-}
 .provider_name {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .interval {
     height: 10px;

@@ -27,30 +27,53 @@ function getUrlParameter() {
 }
 
 function requestSingleData() {
-    var Request = new Object();
-    Request = getUrlParameter();
-    var id = "id=" + Request["id"];
+    // Request = getUrlParameter();
+    // var id = "id=" + Request["id"];
+    // var agent = Request["agent"];
+    var url = location.search
+    var para = url.substr(1)
     $.ajax({
         type: "get",
         url: "../../http",
-        data: id,
+        data: para,
         datatype: "json",
         success: function (data) {
             var json = JSON.parse(data);
             addData(json)
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        },
+        complete: function(XMLHttpRequest, textStatus) {
+            console.log(textStatus); // 调用本次AJAX请求时传递的options参数
         }
     })
 }
 
 function addData(data) {
-    document.getElementById('picture').setAttribute('src', '../images/' + data.picture_url + '.jpg')
-    document.getElementById('name').innerText = data.name
-    document.getElementById('name').innerText = data.name
-    document.getElementById('category').innerText = data.category
-    document.getElementById('provider_class').innerText = data.provider_class
-    document.getElementById('provider_name').innerText = data.provider_name
-    document.getElementById('appearance').innerText = data.appearance
-    document.getElementById('habit').innerText = data.habit
-    document.getElementById('distribution').innerText = data.distribution
-    document.getElementById('point').innerText = data.point
+    if (data.status == "error") {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("prepare_remove"))
+        window.location.assign("../../resource/tree_appreciate.apk")
+    }
+    else {
+        document.getElementById('picture').setAttribute('src', '../images/' + data.id + '.jpg')
+        document.getElementById('name').innerText = data.name
+        document.getElementById('alias').innerText = data.alias
+        document.getElementById('latin_name').innerText = data.latin_name
+        document.getElementById('category').innerText = data.category
+        document.getElementById('appearance').innerText = data.appearance
+        document.getElementById('habit').innerText = data.habit
+        document.getElementById('distribution').innerText = data.distribution
+        document.getElementById('point').innerText = data.point
+        document.getElementById('temperature').innerText = data.temperature
+        document.getElementById('humidity').innerText = data.humidity
+        document.getElementById('water').innerText = data.water
+        document.getElementById('manure').innerText = data.manure
+        document.getElementById('group').innerText = data.group
+        document.getElementById('provider_class').innerText = data.provider_class
+        document.getElementById('provider_name').innerText = data.provider_name
+        document.getElementById('time').innerText = data.time
+    }
 }

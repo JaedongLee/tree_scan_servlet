@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="tree_scan_servlet:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/tree_scan_servlet_war_exploded</output-path>
+  <artifact type="exploded-war" name="tree_appreciate">
+    <output-path>$PROJECT_DIR$/out/artifacts/tree_appreciate</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
